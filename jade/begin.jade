@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		title Welcome!
+		include include/head.jade
+
+	body
+		header
+			.row.center.cyan.white-text(style='padding: 20px 0px')
+				h3: strong COPD Survey
+		main
+
+			.container.center
+				h4 Instructions
+				.divider
+				.container
+					p There are 3 questions. This survey will take about 5 minutes to complete.
+
+		footer
+			.container
+				.row: a.col.s12.btn-large.green(href='slide1.html') Begin Survey
+			include include/footer.jade

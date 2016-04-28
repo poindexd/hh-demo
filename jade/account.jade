@@ -1,0 +1,35 @@
+doctype html
+html
+	head
+		title Welcome!
+		include include/head.jade
+
+	body
+		header
+			.row.center.cyan.white-text(style='padding: 20px 0px')
+				h3: strong Digital Discharge<sup>TM</sup>
+		main
+			.container.center
+				h4.center Sign Up
+				.divider
+				p Enter your email and/or phone number below and earn 100 points instantly!
+
+			.container: .container
+				p: strong Email
+				input(type='email')
+				p: strong Phone Number
+				input(type='tel')
+
+		footer
+			.container
+				.row
+					
+					a.col.s12.l8.offset-l2
+						.center
+							.dot
+							.dot
+							.dot.filled
+
+					a.col.s12.l2.btn-large.green(href='./begin.html') Next
+
+			include include/footer.jade

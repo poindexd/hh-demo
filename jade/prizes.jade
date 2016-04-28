@@ -1,0 +1,59 @@
+doctype html
+html
+	head
+		title Welcome!
+		include include/head.jade
+
+	body
+		header
+			.row.center.cyan.white-text(style='padding: 20px 0px')
+				h3: strong Digital Discharge<sup>TM</sup>
+		main
+			.container.center
+				h4 Don't Miss Out!
+				.divider
+				p Prize values increase the more points you earn! Prizes include:
+
+			.container
+				.row
+					.col.s4
+						.card-panel.center
+							h5.yellow-text.text-darken-1
+								img(src='./img/coin_small.png')
+								| 800
+							img(src='./img/logo_optimum_health.png', height='100', width='auto')
+							h6 One hour massage
+
+					.col.s4
+						.card-panel.center
+							h5.yellow-text.text-darken-1
+								img(src='./img/coin_small.png')
+								| 1600
+							img(src='./img/logo_whole_foods.png', height='100', width='auto')
+							h6 <strong>$100</strong> gift card
+
+					.col.s4
+						.card-panel.center
+							h5.yellow-text.text-darken-1
+								img(src='./img/coin_small.png')
+								| 1400
+							img(src='./img/logo_nike.png', height='100', width='auto')
+							h6 Nike athletic shoes
+					
+
+					//.col.s4: img.card.responsive-img(src='./img/logo_whole_foods.png')
+					//.col.s4: img.card.responsive-img(src='./img/logo_subway.png')
+					
+		footer
+			.container
+				.row
+					
+					a.col.s12.l8.offset-l2
+						.center
+							.dot
+							.dot.filled
+							.dot
+
+					a.col.s12.l2.btn-large.green(href='./account.html') Next
+
+			include include/footer.jade

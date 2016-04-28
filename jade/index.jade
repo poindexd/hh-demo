@@ -1,0 +1,27 @@
+doctype html
+html
+	head
+		title Demo
+		link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
+		//link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')
+		link(rel='stylesheet', href='./css/materialize.css')
+
+	body.grey.lighten-5
+		.container
+			.row: a.col.s12.btn.btn-large Test
+			.row: a.col.s12.btn.btn-large Test2
+
+
+			.row
+				a.col.s2.btn.btn-large Back
+					i.material-icons.left chevron_left
+				a.col.s2.offset-s8.btn-large Next
+					i.material-icons.right chevron_right
+
+			p Progress
+			.progress: .determinate(style='width:30%')
+				
+		.row.grey.lighten-3
+			p blah
+
+

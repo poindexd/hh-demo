@@ -1,0 +1,49 @@
+doctype html
+html
+	head
+		title Welcome!
+		include include/head.jade
+
+	body
+		header
+			.row.center.cyan.white-text(style='padding: 10px 0px')
+				h3: strong Digital Discharge<sup>TM</sup>
+		main
+			.container.center
+				h4 Welcome!
+				.divider
+				.container
+					p We're here to help you stay on track with your health and reward you for doing so!
+
+					p You are about to take a survey about your health. When you leave the hospital, you will continue to recieve reminders to help you stay healthy. These reminders will come through Care Messenger.
+
+			.container: .container
+
+				.row.valign-wrapper
+					.col.s12.l2.center
+						i.material-icons.large.cyan-text mail_outline
+					.col.s12.l10
+						h5 Care Messenger
+						p Simplify your healthcare needs after your hospital stay! We'll send you easy to follow reminders to help keep your health on track.
+
+				.row.valign-wrapper
+					.col.s12.l2.center
+						i.material-icons.large.cyan-text card_giftcard
+					.col.s12.l10
+						h5 Patient Prize
+						p Earn points that you can redeem for fantastic prizes, just by responding to simple reminders in Care Messenger!
+
+		footer
+			.container
+				.row
+					
+					a.col.s12.l8.offset-l2
+						.center
+							.dot.filled
+							.dot
+							.dot
+
+					a.col.s12.l2.btn-large.green(href='./prizes.html') Next
+						//i.material-icons.right chevron_right
+
+			include include/footer.jade

@@ -1,0 +1,32 @@
+doctype html
+html
+	head
+		title Thanks!
+		include include/head.jade
+
+	body
+		header
+			.row.center.cyan.white-text(style='padding: 20px 0px')
+				i.material-icons.white-text.large(style="border:8px solid #fff;border-radius:100%") check
+				h2: strong Survey Complete!
+		main
+			.container.row
+				.col.s12.l3.center
+					img.responsive-img(src='./img/patient-prize-coin.png')
+					h2.yellow-text.text-darken-2 +50
+				.col.s12.l9
+					h4 You've earned 50 PatientPrize points!
+					p Enter your email and/or phone number to recieve your points
+
+					p: strong Email
+					input(type='text')
+					P: strong Phone number
+					input(type='text')
+					
+
+		footer
+			.container
+				.row
+					a.btn-large.green.right Done
+
+			include include/footer.jade
