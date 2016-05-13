@@ -1,0 +1,42 @@
+doctype html
+html
+	head
+		title Welcome!
+		include include/head.jade
+
+		style.
+			html, body{
+				max-height: 100%;
+			}
+			.bg{
+				position: relative;
+				width: 100%;
+				height: 600px;
+				background: url('http://lorempixel.com/640/240/nature/6/');
+				background-size: cover;
+			}
+			.bg::before {
+			  content: "Welcome!";
+			  color: #fff;
+			  font-size: 200px;
+			  padding-top:150px;
+			  text-align: center;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  height: 100%;
+			  width: 100%;
+			  //transition: all 0.8s;
+			  opacity: 0.5;
+			  background: url('http://lorempixel.com/300/200/nature/11');
+			  background-size: 100% 100%;
+			}
+	body
+		header
+			.row.center.cyan.white-text(style='padding: 20px 0px;margin-bottom:0px')
+				h3: strong Digital Discharge<sup>TM</sup>
+		main
+			.bg
+
+		footer
+			include include/footer.jade

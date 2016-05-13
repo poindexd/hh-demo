@@ -150,7 +150,7 @@ $column-size: 17%;
 .radioset{
   :checked + label::before{
     font-size: 100px;
-    padding-top: 30%;
+    padding-top: 75px;
     color: #fff;
   }
   :checked + label.wrong{

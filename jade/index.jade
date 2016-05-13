@@ -12,45 +12,49 @@ html
 		include include/head.jade
 
 
-	body.grey.lighten-5(style='overflow-x:hidden')
+	body.grey.lighten-5(style='overflow-x:hidden;postition:relative')
+		ul.table-of-contents.hide-on-med-and-down.pinned(style='top: 20px;')
+			li: p Digital Discharge
+			li: a(href='#onboarding') Onboarding
+			li: a(href='#slide-types') Slide Types
+			li: a(href='#general') General
 		.container.center
-			.row.blue.white-text: .col.s12
+			.row.blue.darken-4.white-text: .col.s12
 				h1 UI Demos
-
+			.divider
 			h3
 				i.material-icons.small flash_on
 				| Digital Discharge
 				i.material-icons.small flash_on
+			.divider
+			#digital-discharge
 
-			.divider
-			h5 Onboarding
-			.divider
-			.row
+			h4 Onboarding
+			#onboarding.scrollspy.row
 				+link('./welcome.html', 'Welcome')
 				+link('./prizes.html', 'Prizes')
 				+link('./account.html', 'Account')
 				+link('./thanks.html', 'Thanks')
 
-			.divider
-			h5 Slide Types
-			.divider
-			.row
+			
+			h4 Slide Types
+			#slide-types.scrollspy.row
 				+link('./yesno.html', 'Yes/No')
 				+link('./yesnoidk.html', 'Yes/No/Idk')
 				+link('./likert.html', 'Likert')
 				+link('./multichoice.html', 'Multiple Choice')
-
-			.divider
-			h5 General
-			.divider
-			.row
+			
+			h4 General
+			#general.scrollspy.row
 				+link('./begin.html', 'Begin')
-				
+				+link('./full.html', 'Full Image')
 
 			.divider
 
-			h3
-				i.material-icons.small redeem
-				| Patient Prize
-				i.material-icons.small redeem
-				
+		script(src='https://code.jquery.com/jquery-2.2.3.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')
+		script.
+			$(document).ready(function(){
+			    $('.scrollspy').scrollSpy();
+			 });
+					
