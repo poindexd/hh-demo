@@ -6,10 +6,8 @@ html
 
 	body
 		header
-			.row.cyan.white-text(style='padding: 20px 0px')
-				.container
-					span: strong Progress
-					.progress.cyan.darken-1(style='padding:5px 0px'): .determinate.cyan.lighten-3(style='width:50%')
+			+progress('50%')
+			
 		main
 			.container
 				.row.card.center

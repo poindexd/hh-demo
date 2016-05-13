@@ -27,52 +27,53 @@
 
 }
 
-	  body {
-		display: flex;
-		min-height: 100vh;
-		flex-direction: column;
-		font-family: "Raleway", sans-serif;
-	  }
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	font-family: "Raleway", sans-serif;
+	background: #fbfbfb;
+}
 
-	  main {
-		flex: 1 0 auto;
-		align-content: center;
-	  }
+main {
+	flex: 1 0 auto;
+	align-content: center;
+}
 
-	  a, p, span, input {
-	    font-size:1.25em !important;
-	  }
+a, p, span, input {
+	font-size:1.25em !important;
+}
 
-	  sup{
-	  	font-size:0.5em !important;
-	  	vertical-align: super;
-	  }
+sup{
+	font-size:0.5em !important;
+	vertical-align: super;
+}
 
-	  .divider{
-	  	width: 100%;
-	  	height: 4px;
-	  	color: #ddd;
-	  }
+.divider{
+	width: 100%;
+	height: 4px;
+	color: #ddd;
+}
 
 
-	  p{
-	  	color: #aaa;
-	  }
+p{
+	color: #aaa;
+}
 
-	  .dot{
-	  	width:20px;
-	  	height: 20px;
-	  	background: #aaa;
-	  	border-radius: 100%;
-	  	opacity: 0.25;
-	  	margin: 0 auto;
-	  	display: inline-block;
-	  	margin: 10px;
-	  }
+.dot{
+	width:20px;
+	height: 20px;
+	background: #aaa;
+	border-radius: 100%;
+	opacity: 0.25;
+	margin: 0 auto;
+	display: inline-block;
+	margin: 10px;
+}
 
-	  .dot.filled{
-	  	opacity: 1.0;
-	  }
+.dot.filled{
+	opacity: 1.0;
+}
 
 .btn-floating.btn-huge {
     width: 180px;
