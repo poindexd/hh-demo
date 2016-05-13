@@ -1,12 +1,10 @@
 doctype html
 
 mixin link(href, name)
-	.col.s12.l6
-		.card
-			.card-content
-				.card-title
-					a(href=href)= name
-				iframe(src=href, style="width:200%;transform: scale(0.5);transform-origin: 0 0;height:800px;margin-bottom:-400px", frameBorder="0")
+	.col.s12.l6: .card
+		.card-content
+			.card-title: a(href=href)= name
+			iframe(src=href, style="width:200%;transform: scale(0.5);transform-origin: 0 0;height:800px;margin-bottom:-400px", frameBorder="0")
 
 html
 	head
@@ -15,43 +13,43 @@ html
 
 
 	body.grey.lighten-5(style='overflow-x:hidden')
-		.container
+		.container.center
 			.row.blue.white-text: .col.s12
-				h1.center UI Demos
-			//.divider.blue
-			h3.center
+				h1 UI Demos
+
+			h3
 				i.material-icons.small flash_on
 				| Digital Discharge
 				i.material-icons.small flash_on
 
 			.divider
-			h5.center Onboarding
+			h5 Onboarding
 			.divider
 			.row
-				+link('/welcome.html', 'Welcome')
-				+link('/prizes.html', 'Prizes')
-				+link('/account.html', 'Account')
-				+link('/thanks.html', 'Thanks')
+				+link('./welcome.html', 'Welcome')
+				+link('./prizes.html', 'Prizes')
+				+link('./account.html', 'Account')
+				+link('./thanks.html', 'Thanks')
 
 			.divider
 			h5 Slide Types
 			.divider
 			.row
-				+link('/yesno.html', 'Yes/No')
-				+link('/yesnoidk.html', 'Yes/No/Idk')
-				+link('/likert.html', 'Likert')
-				+link('/multichoice.html', 'Multiple Choice')
+				+link('./yesno.html', 'Yes/No')
+				+link('./yesnoidk.html', 'Yes/No/Idk')
+				+link('./likert.html', 'Likert')
+				+link('./multichoice.html', 'Multiple Choice')
 
 			.divider
 			h5 General
 			.divider
 			.row
-				+link('/begin.html', 'Begin')
+				+link('./begin.html', 'Begin')
 				
 
 			.divider
 
-			h3.center
+			h3
 				i.material-icons.small redeem
 				| Patient Prize
 				i.material-icons.small redeem
