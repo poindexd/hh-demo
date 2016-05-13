@@ -1,27 +1,58 @@
 doctype html
+
+mixin link(href, name)
+	.col.s12.l6
+		.card
+			.card-content
+				.card-title
+					a(href=href)= name
+				iframe(src=href, style="width:200%;transform: scale(0.5);transform-origin: 0 0;height:800px;margin-bottom:-400px", frameBorder="0")
+
 html
 	head
 		title Demo
-		link(rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons')
-		//link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')
-		link(rel='stylesheet', href='./css/materialize.css')
+		include include/head.jade
 
-	body.grey.lighten-5
+
+	body.grey.lighten-5(style='overflow-x:hidden')
 		.container
-			.row: a.col.s12.btn.btn-large Test
-			.row: a.col.s12.btn.btn-large Test2
+			.row.blue.white-text: .col.s12
+				h1.center UI Demos
+			//.divider.blue
+			h3.center
+				i.material-icons.small flash_on
+				| Digital Discharge
+				i.material-icons.small flash_on
 
-
+			.divider
+			h5.center Onboarding
+			.divider
 			.row
-				a.col.s2.btn.btn-large Back
-					i.material-icons.left chevron_left
-				a.col.s2.offset-s8.btn-large Next
-					i.material-icons.right chevron_right
+				+link('/welcome.html', 'Welcome')
+				+link('/prizes.html', 'Prizes')
+				+link('/account.html', 'Account')
+				+link('/thanks.html', 'Thanks')
 
-			p Progress
-			.progress: .determinate(style='width:30%')
+			.divider
+			h5 Slide Types
+			.divider
+			.row
+				+link('/yesno.html', 'Yes/No')
+				+link('/yesnoidk.html', 'Yes/No/Idk')
+				+link('/likert.html', 'Likert')
+				+link('/multichoice.html', 'Multiple Choice')
+
+			.divider
+			h5 General
+			.divider
+			.row
+				+link('/begin.html', 'Begin')
 				
-		.row.grey.lighten-3
-			p blah
 
+			.divider
 
+			h3.center
+				i.material-icons.small redeem
+				| Patient Prize
+				i.material-icons.small redeem
+				

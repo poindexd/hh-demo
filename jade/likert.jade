@@ -1,0 +1,42 @@
+doctype html
+html
+	head
+		include include/head.jade
+
+	body
+		header
+			.row.cyan.white-text(style='padding: 20px 0px')
+				.container
+					span: strong Progress
+					.progress.cyan.darken-1(style='padding:5px 0px'): .determinate.cyan.lighten-3(style='width:70%')
+		main
+			.container: .row.card.center
+				i.material-icons.large.grey-text.text-lighten-3 help_outline
+				h3.grey-text.text-darken-3.center How often do you smoke?
+
+			.container-wide(style='padding-top:40px')
+				.radioset
+					ul
+						li
+							input(type="radio" name="radio[]" id="radio1" )
+							label(for="radio1")
+						li
+							input(type="radio" name="radio[]" id="radio2" )
+							label(for="radio2")
+						li
+							input(type="radio" name="radio[]" id="radio3" checked)
+							label(for="radio3")
+						li
+							input(type="radio" name="radio[]" id="radio4" )
+							label(for="radio4")
+						li
+							input(type="radio" name="radio[]" id="radio5" )
+							label(for="radio5")
+				.text-labels
+					.text-label Never
+					.text-label Barely
+					.text-label Sometimes
+					.text-label A lot
+					.text-label All the time
+		footer
+			include include/footer.jade

@@ -12,20 +12,16 @@ html
 					.progress.cyan.darken-1(style='padding:5px 0px'): .determinate.cyan.lighten-3(style='width:30%')
 		main
 			.container
-				.row: .col.s12.card.center
-					i.material-icons.large.grey-text.text-lighten-3 help_outline
+				.row.card.center
+					.card-image: image(src='http://lorempixel.com/700/300/people/3', width='100%')
+					//i.material-icons.large.grey-text.text-lighten-3 help_outline
 
 					h3.grey-text.text-darken-2 Do you smoke?
-
-			.container
-				.row: a.col.s12.btn-large Yes
-				.row: a.col.s12.btn-large No
-
 
 		footer
 			.container
 				.row
-					a.col.s4.l2.btn-large.green(href='welcome.html') Back
-					a.col.s4.l2.offset-s4.offset-l8.btn-large.green(href='thanks.html') Next
+					a.col.s4.l2.btn-large.green(href='welcome.html') No
+					a.col.s4.l2.offset-s4.offset-l8.btn-large.green(href='thanks.html') Yes
 
 			include include/footer.jade
