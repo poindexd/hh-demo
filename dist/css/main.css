@@ -11,6 +11,9 @@
   display: inline-block;
   vertical-align: top; }
 
+.radioset.nobar ul::before {
+  display: none; }
+
 .radioset {
   margin: auto;
   padding: 90px 0 90px 0; }
@@ -82,6 +85,25 @@
     transform: scale(1);
     opacity: 0;
     background: #00bcd4; }
+
+.text-label-4 {
+  width: 24%; }
+
+.radioset-4 li {
+  width: 24%; }
+
+.radioset :checked + label::before {
+  font-size: 100px;
+  padding-top: 30%;
+  color: #fff; }
+
+.radioset :checked + label.wrong::before {
+  background: #f44336;
+  content: '\2717'; }
+
+.radioset :checked + label.correct::before {
+  background: #4caf50;
+  content: '\2713'; }
 
 .container-wide {
   margin: 0 auto;

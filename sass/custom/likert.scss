@@ -3,9 +3,9 @@ $fill-color: #fff;
 $filled-color: #00bcd4;
 $outline-color: #aaa;
 $radio-size: 180px;
-$radio-margin: -90px;
-$half-size: 90px;
-$half-margin: -45px;
+$half-size: $radio-size / 2;
+$radio-margin: (-$half-size);
+$half-margin: $radio-margin / 2;
 $bar-height: 36px;
 $bar-margin: -30px;
 $column-size: 17%;
@@ -23,10 +23,15 @@ $column-size: 17%;
   width:$column-size;
   display: inline-block;
   vertical-align: top;
-
-  
 }
 
+.radioset.nobar {
+  ul{
+    &::before{
+      display:none;
+    }
+  }
+}
 .radioset {
   margin: auto;
   padding: $half-size 0 $half-size 0;
@@ -84,9 +89,9 @@ $column-size: 17%;
       border-radius: 50%;
       transform: translate3d(0,0,0);
       -moz-transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s all;
-  -o-transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s all;
-  -webkit-transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s all;
-  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s all;
+      -o-transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s all;
+      -webkit-transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s all;
+      transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s all;
     }
 
     &::before {      
@@ -129,6 +134,35 @@ $column-size: 17%;
         background: $filled-color;
         //box-shadow: inset 0 -5px 5px -5px #ccc, 0 2px 5px -2px #000;
       }
+    }
+  }
+}
+
+.text-label-4{
+  width: 24%;
+}
+
+.radioset-4{
+  li{
+    width: 24%;
+  }
+}
+.radioset{
+  :checked + label::before{
+    font-size: 100px;
+    padding-top: 30%;
+    color: #fff;
+  }
+  :checked + label.wrong{
+    &::before{
+        background: #f44336 ;
+        content: '\2717';
+    }
+  }
+  :checked + label.correct{
+    &::before{
+        background: #4caf50 ;
+        content: '\2713';
     }
   }
 }

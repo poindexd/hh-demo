@@ -17,21 +17,11 @@ html
 			.container-wide(style='padding-top:40px')
 				.radioset
 					ul
-						li
-							input(type="radio" name="radio[]" id="radio1" )
-							label(for="radio1")
-						li
-							input(type="radio" name="radio[]" id="radio2" )
-							label(for="radio2")
-						li
-							input(type="radio" name="radio[]" id="radio3" checked)
-							label(for="radio3")
-						li
-							input(type="radio" name="radio[]" id="radio4" )
-							label(for="radio4")
-						li
-							input(type="radio" name="radio[]" id="radio5" )
-							label(for="radio5")
+						each val in [1,2,3,4,5]
+							li
+								input(type="radio" name="radio[]" id="radio"+val checked)
+								label(for="radio"+val)
+
 				.text-labels
 					.text-label Never
 					.text-label Barely

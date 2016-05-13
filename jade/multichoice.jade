@@ -13,12 +13,23 @@ html
 		main
 			.container
 				.row.card.center
-					.card-image: image(src='http://lorempixel.com/700/300/people/5', width='100%')
-					//i.material-icons.large.grey-text.text-lighten-3 help_outline
+					//.card-image: image(src='http://lorempixel.com/700/300/people/5', width='100%')
+					i.material-icons.large.grey-text.text-lighten-3 help_outline
 
 					h3.grey-text.text-darken-2 What should you do if you feel sick?
 
-
+			.container-wide(style='padding-top:40px')
+				.radioset.radioset-4.nobar
+					ul
+						each val, index in {1:'wrong',2:'correct',3:'wrong',4:'correct'}
+							li
+								input(type="radio" name="radio[]" id="radio"+index )
+								label(for="radio"+index class=val)
+				.text-labels
+					.text-label.text-label-4 Eat a bacon-wrapped pizza
+					.text-label.text-label-4 Call your doctor
+					.text-label.text-label-4 Complain to your grandma
+					.text-label.text-label-4 Nothing
 
 		footer
 
