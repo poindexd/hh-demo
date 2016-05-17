@@ -27,6 +27,9 @@
 
 }
 
+.wrapper{
+	width:100%;
+}
 body {
 	display: flex;
 	min-height: 100vh;
@@ -36,8 +39,10 @@ body {
 }
 
 main {
+	display: flex;
 	flex: 1 0 auto;
-	align-content: center;
+	//align-content: center;
+	align-items: center;
 }
 
 a, p, span, input {

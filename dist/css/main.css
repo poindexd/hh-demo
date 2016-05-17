@@ -124,6 +124,9 @@
 .table-of-contents a:hover {
   border-left: 2px solid #0D47A1; }
 
+.wrapper {
+  width: 100%; }
+
 body {
   display: flex;
   min-height: 100vh;
@@ -132,8 +135,9 @@ body {
   background: #fbfbfb; }
 
 main {
+  display: flex;
   flex: 1 0 auto;
-  align-content: center; }
+  align-items: center; }
 
 a, p, span, input {
   font-size: 1.25em !important; }
