@@ -18,15 +18,15 @@ html
 			li: a(href='#onboarding') Onboarding
 			li: a(href='#slide-types') Slide Types
 			li: a(href='#general') General
+			li: p Patient Prize
+			li: a(href='#pp-general') General
+
 		.container.center
 			.row.blue.darken-4.white-text: .col.s12
 				h1 UI Demos
-			.divider
-			h3
-				i.material-icons.small flash_on
-				| Digital Discharge
-				i.material-icons.small flash_on
-			.divider
+			.row.grey.lighten-3.blue-text.text-darken-4: .col.s12
+				h3 Digital Discharge
+
 			#digital-discharge
 
 			h4 Onboarding
@@ -49,7 +49,12 @@ html
 				+link('./begin.html', 'Begin')
 				+link('./full.html', 'Full Image')
 
-			.divider
+			.row.grey.lighten-3.blue-text.text-darken-4: .col.s12
+				h3 Patient Prize
+
+			h4 General
+			#pp-general.scrollspy.row
+				+link('./pp-onboard.html', 'Onboard')
 
 		script(src='https://code.jquery.com/jquery-2.2.3.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')
