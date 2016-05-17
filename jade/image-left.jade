@@ -1,0 +1,23 @@
+doctype html
+html
+	head
+		title Thanks!
+		include include/head.jade
+
+	body
+		header
+			+progress('50%')
+			
+		main
+			.container: .card
+				.row.valign-wrapper
+					.col.s12.l4.center
+						.card-image: image(src='http://lorempixel.com/300/600/people/9', style='max-height:600px')
+
+					.col.s12.l8.center
+						i.material-icons.large.grey-text.text-lighten-3 chrome_reader_mode
+						.card-content: h3.grey-text.text-darken-2 Take time to read a book
+
+		footer
+
+			include include/footer.jade
