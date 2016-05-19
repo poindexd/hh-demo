@@ -1,0 +1,42 @@
+doctype html
+html
+	head
+		title Welcome!
+		include include/head.jade
+
+	body
+		header
+			.row.center.cyan.white-text(style='padding: 10px 0px')
+				h3: strong Digital Discharge<sup>TM</sup>
+		main: .wrapper
+			.container.center
+				h4 Stay on Track
+				.divider
+				br
+
+			.container: .row
+				.col.s6.l3
+					img.responsive-img(src='./img/sms_preview_1.png')
+				.col.s6.l3
+					h5 Text Message Check-Ins
+					p Receive easy to follow prompts to help you maintain your health away from the hospital.
+				.col.s6.l3
+					img.responsive-img(src='./img/sms_preview_2.png')
+				.col.s6.l3
+					h5 Responsive Status Prompts
+					p Easily track your Patient Prize points and redeem them for prizes, all through your phone!
+					
+		footer
+			.container
+				.row
+					
+					a.col.s12.l8.offset-l2
+						.center
+							.dot
+							.dot.filled
+							.dot
+							.dot
+
+					a.col.s12.l2.btn-large.green(href='./prizes.html') Next
+
+			include include/footer.jade

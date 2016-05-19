@@ -9,23 +9,22 @@ html
 			+progress('50%')
 			
 		main
-			
+			.container(style='margin-top: -80px; margin-bottom: -80px; overflow: hidden')
 				.row(style='margin-bottom:0px')
 
-					//.col.s12.l6.center: .card(style='width:300px;height:300px;top:20px;left:40px')
-						p: i.material-icons.large.grey-text.text-lighten-3 restaurant_menu
+					.col.s6: .right: .card.valign-wrapper(style='width:300px;height:300px;left:40px;z-index:-4')
+						.card-content.center: h3.grey-text.text-darken-2 Instead of riding... 
 
-					.col.s12.l6.center: .card(style='width:300px;height:300px;top:40px;left:20px')
+					.col.s6: .left: .card(style='width:300px;height:300px;top:40px;z-index:-3')
 						.card-image: image(src='http://lorempixel.com/400/400/people/5')
 
 				.row
 
-					//.col.s12.l6.center: .card(style='width:300px;height:300px;top:-40px;left:20px')
-						.card-image: image(src='http://lorempixel.com/400/400/people/4')
+					.col.s6: .right: .card(style='width:300px;height:300px;top:-40px;z-index:-5')
+						.card-image: image(src='http://lorempixel.com/400/400/people/2')
 
-
-					.col.s12.l6.offset-l6.center: .card(style='width:300px;height:300px;top:-20px;')
-						.card-content: h3.grey-text.text-darken-2 Eat three healthy meals every day
+					.col.s6: .left: .card.valign-wrapper(style='width:300px;height:300px;left:-40px;z-index:-1')
+						.card-content.center: h3.grey-text.text-darken-2 Bike when possible
 
 		footer
 
