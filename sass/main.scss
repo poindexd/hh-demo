@@ -80,13 +80,17 @@ p{
 	opacity: 1.0;
 }
 
-.btn-floating.btn-huge {
+.btn-floating.btn-floating-huge {
     width: 180px;
     height: 180px;
 }
-.btn-floating.btn-huge i {
+.btn-floating.btn-floating-huge i {
     line-height: 180px;
 }
-.btn-huge i {
+.btn-floating-huge i {
     font-size: 100px;
+}
+.btn-large {
+	height:72px;
+	line-height:72px;
 }
