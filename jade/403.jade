@@ -1,0 +1,15 @@
+doctype html
+html
+	head
+		title Not Found
+		include include/head.jade
+
+	body(style='background-image: url("./img/background_16.svg"); background-size: cover')
+
+		main
+			.container-wide.white-text
+				h2
+					strong(style='font-size: 2em') 403
+					|  &mdash; Unauthorized
+				h4 You do not have permission <br>to view this page.
+				p: a(href='./index.html', style='color: #087d98') Take me home!

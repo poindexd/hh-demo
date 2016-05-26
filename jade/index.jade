@@ -20,7 +20,8 @@ html
 			li: a(href='#general') General
 			li: p Patient Prize
 			li: a(href='#pp-general') General
-
+			li: p Dashboard
+			li: a(href='#error') Error
 		.container.center
 			.row.blue.darken-4.white-text: .col.s12
 				h1 UI Demos
@@ -60,6 +61,15 @@ html
 			h4 General
 			#pp-general.scrollspy.row
 				+link('./pp-onboard.html', 'Onboard')
+
+			.row.grey.lighten-3.blue-text.text-darken-4: .col.s12
+				h3 Dashboard
+
+			h4 Error
+			#error.scrollspy.row
+				+link('./403.html', '403')
+				+link('./404.html', '404')
+				+link('./50x.html', '50X')
 
 		script(src='https://code.jquery.com/jquery-2.2.3.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')
