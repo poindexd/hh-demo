@@ -94,3 +94,45 @@ p{
 	height:72px;
 	line-height:72px;
 }
+
+.person{
+	width:100%;
+	max-width: 150px;
+	height: auto;
+	max-height: 150px;
+}
+.meds{
+	fill: #fbc007;
+}
+.mind{
+	fill: #F44336;
+}
+.diet{
+	fill: #4CAF50;
+}
+.support{
+	fill: #4CAF50;
+}
+.mobility{
+	fill: #fbc007;
+}
+.lifestyle{
+	fill: #F44336;
+}
+.chip{
+	margin: 0 6px;
+}
+.chip.medium{
+	font-size: 18px;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 16px;
+	border-radius:20px;
+}
+.chip.large{
+	font-size: 20px;
+	height: 44px;
+	line-height: 44px;
+	padding: 0 24px;
+	border-radius: 22px;
+}

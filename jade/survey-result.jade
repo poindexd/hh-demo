@@ -1,0 +1,84 @@
+mixin category(score, name, text)
+	.col.l2.m4.s6: .card.hoverable.center(style='height:125px')
+		.card-content
+			if score < 2
+				.chip.medium.green.white-text
+					if text
+						| Low
+					else
+						&nbsp;&nbsp;
+			else if score < 4
+				.chip.medium.amber.white-text
+					if text
+						| Med
+					else
+						&nbsp;&nbsp;
+			else
+				.chip.medium.red.white-text
+					if text
+						| High
+					else
+						&nbsp;&nbsp;
+			p(style='text-transform: uppercase;')=name
+
+html
+	head
+		include include/head.jade
+		style.
+			.nopad .col{
+				padding: 0px;
+			}
+			.nopad .card{
+				margin: 0px;
+			}
+			.nopad .row{
+				margin-bottom: 0px;
+			}
+			.card .card-content p{
+				font-size: 1em !important;
+				padding-top: 10px;
+			}
+			.card-content{
+				padding: 10px;
+			}
+			body{
+				overflow: hidden;
+			}
+	body(style='background:#002332'): main: .container.nopad(style='width:100%;')
+		.row.valign-wrapper
+			.col.s8.l10
+				.row
+					+category(1, 'Support System', true)
+					+category(5, 'State of Mind', true)
+					+category(2, 'Medication', true)
+					+category(5, 'Lifestyle', true)
+					+category(0, 'Diet & Exercise', true)
+					+category(3, 'Mobility', true)
+			.col.s4.l2
+				.card.hoverable.center(style='height:150px')
+					.card-content
+						.row.valign-wrapper
+							.col.s12.l6
+								include include/person.jade
+							.col.s12.l6
+								.chip.medium.amber.white-text Med
+								p(style='text-transform: uppercase;') Risk
+
+		.row.valign-wrapper(style='margin-top: 20px')
+			.col.s8.l10
+				.row
+					+category(1, 'Support System')
+					+category(5, 'State of Mind')
+					+category(2, 'Medication')
+					+category(5, 'Lifestyle')
+					+category(0, 'Diet & Exercise')
+					+category(3, 'Mobility')
+			.col.s4.l2
+				.card.hoverable.center(style='height:150px')
+					.card-content
+						.row.valign-wrapper
+							.col.s12.l6
+								include include/person.jade
+							.col.s12.l6
+								.chip.medium.amber.white-text Med
+								p(style='text-transform: uppercase;') Risk Score

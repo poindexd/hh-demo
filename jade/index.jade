@@ -22,6 +22,9 @@ html
 			li: a(href='#pp-general') General
 			li: p Dashboard
 			li: a(href='#error') Error
+			li: p Components
+			li: a(href='#risk') Risk
+
 		.container.center
 			.row.blue.darken-4.white-text: .col.s12
 				h1 UI Demos
@@ -70,6 +73,14 @@ html
 				+link('./403.html', '403')
 				+link('./404.html', '404')
 				+link('./50x.html', '50X')
+
+			.row.grey.lighten-3.blue-text.text-darken-4: .col.s12
+				h3 Components
+
+			h4 Risk
+			#risk.scrollspy.row
+				+link('./risk.html', 'Risk')
+				+link('./survey-result.html', 'Survey Result')
 
 		script(src='https://code.jquery.com/jquery-2.2.3.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js')

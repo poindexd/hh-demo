@@ -1,0 +1,34 @@
+html
+	head
+		include include/head.jade
+		style.
+			span{
+				color: #fff;
+				font-weight: 300;
+			}
+	body(style='background:#002332'): main: div(style='width:100%;')
+		.row(style='width:100%;')
+			div.center(style='position: relative;width:150px;margin: 0 auto;white-space:nowrap;')
+				include include/person.jade
+				span(style='position:absolute; top: 60px; left: -140px') Support System
+				span(style='position:absolute; top: 10px; left: 140px') State of Mind
+				span(style='position:absolute; top: 30px; left: 140px') Medication
+				span(style='position:absolute; top: 50px; left: 140px') Lifestyle
+				span(style='position:absolute; top: 70px; left: 140px') Diet & Physical Activity
+				span(style='position:absolute; top: 110px; left: 140px') Mobility
+		.row.center
+			.chip.red &nbsp;&nbsp;
+			.chip.amber &nbsp;&nbsp;
+			.chip.green &nbsp;&nbsp;
+		.row.center
+			.chip.red.white-text: b High
+			.chip.amber.white-text: b Med
+			.chip.green.white-text: b Low
+		.row.center
+			.chip.medium.red.white-text: b High
+			.chip.medium.amber.white-text: b Med
+			.chip.medium.green.white-text: b Low
+		.row.center
+			.chip.large.red.white-text: b High
+			.chip.large.amber.white-text: b Med
+			.chip.large.green.white-text: b Low

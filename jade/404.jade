@@ -4,7 +4,7 @@ html
 		title Not Found
 		include include/head.jade
 
-	body(style='background-image: url("./img/background_16.svg"); background-size: cover')
+	body(style='background-image: url("./img/error_bg.svg"); background-size: cover')
 
 		main
 			.container-wide.white-text
@@ -16,4 +16,4 @@ html
 				p.white-text - We might have removed the page when we redesigned our website.
 				p.white-text - Or the link you clicked might be old and not work anymore.
 				p.white-text - Or you might have accidentally typed the wrong URL
-				p: a(href='./index.html', style='color: #087d98') Take me home!
+				p: a.btn-large.white(href='./index.html', style='color: #087d98') Home
