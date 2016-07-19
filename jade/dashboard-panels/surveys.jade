@@ -1,0 +1,14 @@
+.card-panel
+	h5 Surveys
+		span: .chip.red.right &nbsp;&nbsp;
+
+	label 50% Completed
+
+	ul.collection
+		+survey('General Wellness', '5/30/16', true)
+		+survey('ACP', '6/1/16', false)
+		+survey('Cardiovascular', '6/17/16', false)
+		+survey('Pneumonia', '6/23/16', true)
+
+	.row
+		a.right(href='#') See all

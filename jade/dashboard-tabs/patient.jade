@@ -1,0 +1,33 @@
+.row(style='padding: 10px 30px 0px 30px;').white
+	h4 Deadly Daryl
+		span: .chip.medium.amber.white-text.right: b Med
+		span: .chip.medium.grey.lighten-3.right.hide-on-med-and-down Viewed
+		span: .chip.medium.grey.lighten-3.right.hide-on-med-and-down Discharged
+		span: a.btn-floating.right: i.material-icons edit
+		span: a.btn-floating.right: i.material-icons print
+	
+	ul.tabs.transparent
+		li.tab: a(href='#') Overview
+		li.tab: a(href='#') EMR
+		li.tab: a(href='#') Messaging
+		li.tab: a(href='#') Healthy Conversations
+
+div(style='padding: 10px 20px')
+	.row
+		.col.s12.m8
+			include ../dashboard-panels/info.jade
+
+		.col.s12.m4
+			include ../dashboard-panels/careteam.jade
+
+	.row
+		.col.l4.m6.s12
+			include ../dashboard-panels/history.jade
+			//.card-panel
+				p Patient has been known to jam forks into electrical outlets. Keep small metal objects out of reach.
+
+		.col.l4.m6.s12
+			include ../dashboard-panels/surveys.jade
+
+		.col.l4.m12.s12
+			include ../dashboard-panels/messaging.jade

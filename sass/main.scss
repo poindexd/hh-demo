@@ -26,10 +26,21 @@
 	border-left: 2px solid #0D47A1;
 
 }
-
+.card-panel{
+	position: relative;
+}
 .wrapper{
 	width:100%;
 }
+body{
+	text-overflow: ellipsis;
+}
+label{
+	height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+}
+
 body {
 	display: flex;
 	min-height: 100vh;
@@ -46,7 +57,7 @@ main {
 }
 
 a, p, span, input {
-	font-size:1.25em !important;
+	//font-size:1.25em !important;
 }
 
 sup{
@@ -135,4 +146,116 @@ p{
 	line-height: 44px;
 	padding: 0 24px;
 	border-radius: 22px;
+}
+
+
+// BUTTERFLY LOGO
+$height: 150px;
+$width: 150px;
+$bg-color: #fefefe;
+$wings-separation: 5px;
+$svg-per: 70%;
+$bg-color--ebfblue: rgb(0, 120, 191);
+
+.butterfly {
+  position: relative;
+  height: $height;
+  width: $width;
+  border-radius: 50%;
+  background-color: $bg-color;
+  //background-image: url("http://www.transparenttextures.com/patterns/scribble-light.png");
+  //border: 5px solid darken($bg-color, 20);
+  margin: 20 auto;
+  box-shadow: 0 9px 12px rgba(0,0,0,.25), 0 3px 6px rgba(0,0,0,0.16);
+  
+  // obfuscate the texture bg
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    //background-color: rgba(0,0,0,0.1);
+  }
+}
+
+
+$duration: 10s;
+.wings {
+  position: absolute;
+  width: $svg-per;
+  height: $svg-per;
+  top: 27%;
+  transform-origin: top left;
+  animation: flap $duration infinite;
+  
+  &.left {
+    right: 43%;
+    transform-origin: right center;
+  }
+  
+  &.right {
+    left: 57%;
+    transform-origin: left center;
+  }
+}
+
+.shadow {
+  position: absolute;
+  width: $svg-per;
+  height: $svg-per;
+  top: 29%;
+  transform-origin: top left;
+  opacity: 0.3;
+  animation: flap-shadow $duration infinite;
+  
+  &.left {
+    right: 43%;
+    transform-origin: right center;
+  }
+  
+  &.right {
+    left: 57%;
+    transform-origin: left center;
+  }
+}
+
+@keyframes flap {
+  0%, 10%, 40%, 65%, 100% {
+    transform: scale(1,1);
+  }
+  
+  25% {
+    transform: scale(.75,1);
+  }
+  
+  75%, 85% {
+    transform: scale(.85,1);
+  }
+  
+  80% {
+    transform: scale(.95, 1);
+  }
+  
+}
+
+@keyframes flap-shadow {
+  0%, 10%, 40%, 65%, 100% {
+    transform: scale(1,1);
+  }
+  
+  25% {
+    transform: scale(.85,1);
+  }
+  
+  75%, 85% {
+    transform: scale(.92,1);
+  }
+  
+  80% {
+    transform: scale(.97, 1);
+  }
+  
 }

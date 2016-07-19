@@ -10,7 +10,7 @@ let sass = require('gulp-sass');
 
 gulp.task('server', function() {
     connect.server({
-    port: 8000,
+    port: 8001,
     base: 'dist'
   });
 });
@@ -21,7 +21,7 @@ gulp.task('compress', function() {
       preserveComments: 'license'
     }).on('error', console.error.bind(console)))
     .pipe(gulp.dest('./dist/js'))
-    .pipe(livereload());
+    //.pipe(livereload());
 });
 
 gulp.task('templates', function() {
@@ -32,15 +32,14 @@ gulp.task('templates', function() {
       locals: YOUR_LOCALS
     }))
     .pipe(gulp.dest('./dist/'))
-    .pipe(livereload());
+    //.pipe(livereload());
 
-  gulp.src('./jade/include/*.jade')
-  .pipe(livereload());
+  //.pipe(livereload());
 });
 
 gulp.task('watch', function() {
   livereload.listen();
-  gulp.watch('jade/*.jade', ['templates']);
+  gulp.watch('jade/**/*.jade', ['templates']);
   gulp.watch('jade/include/*.jade', ['templates']);
   gulp.watch('js/*.js', ['compress']);
   gulp.watch('sass/**/*.scss', ['sass']);
@@ -50,7 +49,7 @@ gulp.task('sass', function () {
   gulp.src('./sass/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./dist/css'))
-    .pipe(livereload());
+    //.pipe(livereload());
 });
 
 gulp.task('default', ['templates', 'sass', 'compress', 'server', 'watch']);
