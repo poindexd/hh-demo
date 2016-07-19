@@ -63,6 +63,13 @@ html
 			.tab a{
 				color: #00bcd4 !important;
 			}
+			.tab i, .tab span{
+					line-height: inherit;
+					vertical-align: middle;
+			}
+			.tab span{
+			margin-left: 10px;
+			}
 			h5{
 			font-size: 1.2em;
 			}
@@ -88,10 +95,12 @@ html
 							span.new.badge 4
 					li.no: a Account
 					li.no: a Logout
+
 				ul.left.hide-on-med-and-down
 					li.no: a Patients
 						i.material-icons.left navigate_before
 				a.button-collapse(href="#", data-activates='menu'): i.material-icons menu
+				h4.right.left.hide-on-large-only Deadly Daryl
 
 		main: .wrapper
 			include dashboard-tabs/patient.jade

@@ -1,16 +1,29 @@
 .row(style='padding: 10px 30px 0px 30px;').white
-	h4 Deadly Daryl
+	h4
+		span.hide-on-med-and-down Deadly Daryl
 		span: .chip.medium.amber.white-text.right: b Med
-		span: .chip.medium.grey.lighten-3.right.hide-on-med-and-down Viewed
-		span: .chip.medium.grey.lighten-3.right.hide-on-med-and-down Discharged
-		span: a.btn-floating.right: i.material-icons edit
-		span: a.btn-floating.right: i.material-icons print
+		span: .chip.medium.grey.lighten-3.right Viewed
+		span: .chip.medium.grey.lighten-3.right Discharged
+		span: a.btn-floating.right.hide-on-med-and-down: i.material-icons edit
+		span: a.btn-floating.right.hide-on-med-and-down: i.material-icons print
 	
 	ul.tabs.transparent
-		li.tab: a(href='#') Overview
-		li.tab: a(href='#') EMR
-		li.tab: a(href='#') Messaging
-		li.tab: a(href='#') Healthy Conversations
+		li.tab
+			a(href='#')
+				i.material-icons list
+				span.hide-on-med-and-down Overview
+		li.tab
+			a(href='#')
+				i.material-icons timeline
+				span.hide-on-med-and-down EMR
+		li.tab 
+			a(href='#')
+				i.material-icons chat
+				span.hide-on-med-and-down Messaging
+		li.tab
+			a(href='#')
+				i.material-icons mood
+				span.hide-on-med-and-down Healthy Conversations
 
 div(style='padding: 10px 20px')
 	.row
