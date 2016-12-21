@@ -1,0 +1,67 @@
+<html><head><title>Wellopp Dashboard</title><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="./css/chartist.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/><!--link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')--><link rel="stylesheet" href="./css/materialize.css"/><link rel="stylesheet" href="./css/main.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:500,300|PT+Sans" type="text/css"/><!--meta(name='viewport', content='width=device-width, initial-scale=1')--><style>.scores{
+	padding-top: 20px;
+}
+.scores .col.s2{
+		border-left: 2px solid #dcdcdc;
+}
+.scores .chip{
+	display: block;
+	border: 4px solid transparent;
+	background-color: #fafafa;
+	font-size: 20px;
+	height: 44px;
+	line-height: 38px;
+	padding: 0 24px;
+	border-radius: 22px;
+	transition: all 0.2s ease;
+	cursor: pointer;
+}
+.scores .chip.low{
+	color: #4CAF50 !important;
+}
+.scores .chip.med{
+	color: #ffc107 !important;			
+}
+.scores .chip.high{
+	color: #F44336 !important;
+}
+
+.scores .chip.low:hover{
+	border: 4px solid #4CAF50;
+}
+.scores .chip.low.selected{
+	background-color: #4CAF50 !important;
+	color: white !important;
+}
+.scores .chip.med:hover{
+	border: 4px solid #ffc107;
+}
+.scores .chip.med.selected{
+	background-color: #ffc107 !important;
+	color: white !important;
+}
+.scores .chip.high:hover{
+	border: 4px solid #F44336;
+}
+.scores .chip.high.selected{
+	background-color: #F44336 !important;
+	color: white !important;
+}
+.card-sticky{
+	display: inline-block;
+	vertical-align: middle;
+	width: 300px;
+	margin-left: 40px;
+	height: 200px;
+	background: #efec96;
+	background: radial-gradient(#f4f1b2, #eae672);
+	text-align: left;
+}
+.card-sticky p {
+	color: black;
+	font-size: 20px;
+}
+</style></head><body><main><div class="container"><ul class="collapsible popout"><li><div class="collapsible-header"><div style="margin-bottom:0px;" class="row valign-wrapper"><div class="col s1 center"><h4 style="font-size: 3em;" class="material-icons amber-text">timeline</h4></div><div class="col s7"><h4>General Wellness Survey</h4><h5>10/4/2016</h5></div><div class="col s4 center"><div class="chip large amber white-text"><b>Med</b></div></div></div></div><div class="collapsible-body"><div class="scores row center"><div class="col s2"><label>State of Mind</label><div class="chip low">Low</div></div><div class="col s2"><label>Support System</label><div class="chip high">High</div></div><div class="col s2"><label>State of Mind</label><div class="chip med">Med</div></div><div class="col s2"><label>Support System</label><div class="chip high">High</div></div><div class="col s2"><label>State of Mind</label><div class="chip low">Low</div></div><div class="col s2"><label>Support System</label><div class="chip med">Med</div></div></div><div class="suggestions row"><div class="card card-sticky"><p>Patient must stop smoking.</p></div><div class="card card-sticky"><p>Patient indicates lacking reliable transportation.</p></div><div class="card card-sticky"><p>Patient indicates feeling that people around them are negatively affecting their health.</p></div></div></div></li><li><div class="collapsible-header"><div style="margin-bottom:0px;" class="row valign-wrapper"><div class="col s1 center"><h4 style="font-size: 3em;" class="material-icons amber-text">timeline</h4></div><div class="col s7"><h4>General Wellness Survey</h4><h5>10/4/2016</h5></div><div class="col s4 center"><div class="chip large amber white-text"><b>Med</b></div></div></div></div><div class="collapsible-body"><div class="scores row center"><div class="col s2"><label>State of Mind</label><div class="chip low">Low</div></div><div class="col s2"><label>Support System</label><div class="chip high">High</div></div><div class="col s2"><label>State of Mind</label><div class="chip med">Med</div></div><div class="col s2"><label>Support System</label><div class="chip high">High</div></div><div class="col s2"><label>State of Mind</label><div class="chip low">Low</div></div><div class="col s2"><label>Support System</label><div class="chip med">Med</div></div></div><div class="suggestions row"><div class="card card-sticky"><p>Patient must stop smoking.</p></div><div class="card card-sticky"><p>Patient indicates lacking reliable transportation.</p></div><div class="card card-sticky"><p>Patient indicates feeling that people around them are negatively affecting their health.</p></div></div></div></li><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script><script src="./js/velocity.min.js"></script><script src="./js/chartist.min.js"></script><script>$('.scores .chip').on('click', function(){
+		$(this).toggleClass('selected');
+		$('.suggestions').toggle(400);
+})</script></ul></div></main></body></html>

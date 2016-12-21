@@ -1,0 +1,125 @@
+mixin sample
+	li
+		.collapsible-header
+			.row.valign-wrapper(style='margin-bottom:0px;')
+				.col.s1.center
+					h4.material-icons.amber-text(style='font-size: 3em;') timeline
+				.col.s7
+					h4 General Wellness Survey
+					h5 10/4/2016
+				.col.s4.center
+					.chip.large.amber.white-text: b Med
+		.collapsible-body
+				.scores.row.center
+					.col.s2
+						label State of Mind
+						.chip.low Low
+					.col.s2
+						label Support System
+						.chip.high High
+					.col.s2
+						label State of Mind
+						.chip.med Med
+					.col.s2
+						label Support System
+						.chip.high High
+					.col.s2
+						label State of Mind
+						.chip.low Low
+					.col.s2
+						label Support System
+						.chip.med Med
+				.suggestions.row
+						.card.card-sticky
+							p Patient must stop smoking.
+						.card.card-sticky
+							p Patient indicates lacking reliable transportation.
+						.card.card-sticky
+							p Patient indicates feeling that people around them are negatively affecting their health.
+
+html
+	head
+		title Wellopp Dashboard
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='stylesheet', href='./css/chartist.min.css')
+		include include/head.jade
+
+		style.
+			.scores{
+				padding-top: 20px;
+			}
+			.scores .col.s2{
+					border-left: 2px solid #dcdcdc;
+			}
+			.scores .chip{
+				display: block;
+				border: 4px solid transparent;
+				background-color: #fafafa;
+				font-size: 20px;
+				height: 44px;
+				line-height: 38px;
+				padding: 0 24px;
+				border-radius: 22px;
+				transition: all 0.2s ease;
+				cursor: pointer;
+			}
+			.scores .chip.low{
+				color: #4CAF50 !important;
+			}
+			.scores .chip.med{
+				color: #ffc107 !important;			
+			}
+			.scores .chip.high{
+				color: #F44336 !important;
+			}
+
+			.scores .chip.low:hover{
+				border: 4px solid #4CAF50;
+			}
+			.scores .chip.low.selected{
+				background-color: #4CAF50 !important;
+				color: white !important;
+			}
+			.scores .chip.med:hover{
+				border: 4px solid #ffc107;
+			}
+			.scores .chip.med.selected{
+				background-color: #ffc107 !important;
+				color: white !important;
+			}
+			.scores .chip.high:hover{
+				border: 4px solid #F44336;
+			}
+			.scores .chip.high.selected{
+				background-color: #F44336 !important;
+				color: white !important;
+			}
+			.card-sticky{
+				display: inline-block;
+				vertical-align: middle;
+				width: 300px;
+				margin-left: 40px;
+				height: 200px;
+				background: #efec96;
+				background: radial-gradient(#f4f1b2, #eae672);
+				text-align: left;
+			}
+			.card-sticky p {
+				color: black;
+				font-size: 20px;
+			}
+
+	body: main: .container: ul.collapsible.popout
+		+sample
+		+sample
+
+		script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js")
+		script(src='./js/velocity.min.js')
+		script(src='./js/chartist.min.js')
+		script.
+			$('.scores .chip').on('click', function(){
+					$(this).toggleClass('selected');
+					$('.suggestions').toggle(400);
+			})
+		

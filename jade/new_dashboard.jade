@@ -80,8 +80,8 @@ html
 			min-width: 0px;
 			}
 	body.grey.lighten-4
-		ul#menu.side-nav.fixed.blue.darken-2
-			li.center: include include/butterfly.jade
+		ul#menu.side-nav.fixed.blue-green-gradient.darken-2
+			li.center: .butterfly: include include/butterfly.html
 			li
 				a.btn-flat.blue.darken-3.waves-effect.waves-light.white-text Patients
 					i.material-icons.left.white-text person
@@ -93,13 +93,11 @@ html
 					i.material-icons.left.white-text chat
 
 		header
-			nav.green.lighten-1: .nav-wrapper(style='padding: 0px 20px')
+			nav.blue-green-gradient.lighten-1: .nav-wrapper(style='padding: 0px 20px')
 				ul.hide-on-med-and-down.right
-					li.no
-						a Notifications
-							//span.new.badge 4
-					li.no: a Account
-					li.no: a Logout
+					li.no: a: i.material-icons notifications
+					li.no: a: i.material-icons person
+					li.no: a: i.material-icons settings
 
 				ul.left.hide-on-med-and-down
 					li.no: a Patients

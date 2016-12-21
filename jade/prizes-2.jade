@@ -1,0 +1,88 @@
+mixin prize(amount, url, desc, comp, id)
+	.prize.col.s12.l4.m6
+		.card-panel(style='height:130px')
+			p(style='position: absolute; top: -5px; right: -5px;')
+				input(type='checkbox' id=id)
+				label(for=id)
+			.row(style='margin-bottom:0px')
+				.col.s4
+					img.responsive-img(src=url, style='max-height:100px;')
+				.col.s8
+					h5= desc
+					label= comp
+					h5.yellow-text.text-darken-1
+						img(src='./img/coin_small.png' width='20' height='20')
+						| !{amount}
+
+doctype html
+html
+	head
+		title Welcome!
+		include include/head.jade
+		style.
+			.prize .card-panel{
+				cursor: pointer;
+			}
+			.prize label{
+				cursor: inherit;
+			}
+			.prize h5{
+				font-size: 1.2rem;
+				margin-top: 0.4rem;
+				margin-bottom: 0.4rem;
+			}
+			.prize .col{
+				height: 100px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			[type="checkbox"]:checked + label:before{
+				border-right: 4px solid #4CAF50;
+				border-bottom: 4px solid #4CAF50;
+			}
+
+	body
+		header
+			.row.center.cyan.white-text(style='padding: 10px 0px')
+				h3: strong Digital Discharge<sup>TM</sup>
+		main: .wrapper
+			.container.center
+				h4 Don't Miss Out!
+				.divider
+				h5 Prize values increase the more points you earn! Prizes include:
+
+			.container
+				.row
+					+prize(800, './img/logo_tailwaggers.png', 'Free Pet Grooming', 'Tailwaggers Pet Store',0)
+
+					+prize(1000, './img/logo_intouch.png', '30 Minute Massage', 'InTouch MicroSpa', 1)
+
+					+prize(1600, './img/logo_snowcreek.png', '1 Month Membership', 'Snow Creek Athletic Club', 2)
+
+					+prize(600, './img/logo_subway.png', '$25 gift card', 'Subway', 3)
+
+					+prize(1200, './img/logo_amazon.png', '$50 gift card', 'Amazon', 4)
+
+					+prize(1400, './img/logo_nike.png', 'Nike Athletic Shoes', 'Nike', 5)
+
+					
+		footer
+			.container: .row
+					
+					a.col.s12.l6.offset-l3
+						.center
+							.dot
+							.dot
+							.dot.filled
+							.dot
+
+					a.col.s12.l3.btn-large.green(href='./account.html') Next
+
+			include include/footer.jade
+		script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+		script.
+			$('.prize .card-panel').on('click', function(){
+				$('input').prop('checked', false);
+				$(this).find('input').prop('checked', true);
+			});

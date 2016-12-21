@@ -1,0 +1,37 @@
+mixin dot(title, date, icon)
+	li: .row
+		.col.s4
+			label(style='line-height:44px').right= date
+		.col.s2
+			.timeline-item.circle&attributes(attributes)
+				i.material-icons.white-text= icon
+		.col.s6
+			label(style='line-height:44px')= title
+
+doctype html
+html
+	head
+		title Timeline demo
+		include include/head.jade
+		style.
+			.timeline-item{
+				margin: 0 auto;
+			}
+			.timeline-item:hover{
+				cursor: pointer;
+				transform: scale(1.2);
+				transition-duration: 1000;
+			}
+	body
+		main: .container: .row
+			.col.s12.l6.offset-l3
+				.card(style='padding: 40px')
+					ul
+						+dot('Discharged','10/30/2016', 'file_upload')(class='grey')
+						+dot('Note Added', '10/29/2016', 'content_paste')(class='grey')
+						+dot('Healthy Conversation', '10/29/2016', 'forum')(class='grey')
+						+dot('Cardiac Survey Taken','10/27/2016', 'favorite')(class='red')
+						+dot('General Wellness Survey Taken', '10/27/2016', 'spa')(class='amber')
+						+dot('Admitted','9/4/2016', 'file_download')(class='grey')
+
+		//	i.material-icons favorite		

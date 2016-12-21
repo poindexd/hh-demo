@@ -1,9 +1,9 @@
 .row(style='padding: 10px 30px 0px 30px;').white
 	h4
-		span.hide-on-med-and-down Deadly Daryl
-		span: .chip.medium.amber.white-text.right: b Med
-		span: .chip.medium.grey.lighten-3.right.hide-on-med-and-down Viewed
-		span: .chip.medium.grey.lighten-3.right Discharged
+		span.hide-on-med-and-down(style='margin-right:30px') Dexter Morgan
+		.chip.medium.amber.white-text: b Med
+		.chip.medium.grey.lighten-3.hide-on-med-and-down Viewed
+		.chip.medium.grey.lighten-3 Discharged
 		span: a.btn-floating.right.hide-on-med-and-down: i.material-icons edit
 		span: a.btn-floating.right.hide-on-med-and-down: i.material-icons print
 	
@@ -27,20 +27,25 @@
 
 div(style='padding: 10px 20px')
 	.row
-		.col.s12.m8
-			include ../dashboard-panels/info.jade
+		.col.s12.m12.l3
+			include ../dashboard-panels/timeline.jade
 
-		.col.s12.m4
-			include ../dashboard-panels/careteam.jade
+		.col.s12.m12.l9
+			.row
+				.col.s12.m6
+					include ../dashboard-panels/detail.jade
 
-	.row
-		.col.l4.m6.s12
-			include ../dashboard-panels/history.jade
-			//.card-panel
-				p Patient has been known to jam forks into electrical outlets. Keep small metal objects out of reach.
+				.col.s12.m6
+					include ../dashboard-panels/careteam.jade
 
-		.col.l4.m6.s12
-			include ../dashboard-panels/surveys.jade
+			.row
+				//.col.l4.m6.s12
+					include ../dashboard-panels/history.jade
+					//.card-panel
+						p Patient has been known to jam forks into electrical outlets. Keep small metal objects out of reach.
 
-		.col.l4.m12.s12
-			include ../dashboard-panels/messaging.jade
+				.col.l6.m12.s12
+					include ../dashboard-panels/surveys.jade
+
+				.col.l6.m12.s12
+					include ../dashboard-panels/messaging.jade

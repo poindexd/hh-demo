@@ -1,0 +1,167 @@
+<html><head><title>Wellopp Dashboard</title><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="./css/chartist.min.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/><!--link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css')--><link rel="stylesheet" href="./css/materialize.css"/><link rel="stylesheet" href="./css/main.css"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:500,300|PT+Sans" type="text/css"/><!--meta(name='viewport', content='width=device-width, initial-scale=1')--><style>.hoverable:hover {
+	transition: box-shadow .25s;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.scores .col{
+		border-left: 4px solid #ececec;
+		border-bottom: 4px solid #ececec;
+		padding: 35px 10px;
+}
+
+.scores::nth-child(1){
+	border-left:none;
+}
+
+.collection{
+	overflow: visible;
+}
+.collection-item{
+	cursor: pointer;
+	overflow: hidden;
+	backface-visibility: hidden;
+	transition: box-shadow .25s;
+	box-shadow: none;
+
+}
+.collection{
+border: none;
+}
+.collection .collection-item{
+	border-bottom: none;
+	margin-bottom: 4px;
+}
+.collection-item:hover, .collection-item.selected{
+	transition-duration: 0.25s;
+	transform: scale(1.1) translateZ(0);
+	z-index: 5000;
+	//border: none;
+}
+.collection-item.selected .bg{
+	transition-duration: 0.25s;
+	-webkit-transition-timing-function: ease-in; /* Safari and Chrome */
+	transition-timing-function: ease-in;
+	transform: scale(25);
+}
+.collection-item.selected i{
+	transform: scale(2);
+}
+.collection-item.selected, .collection-item.selected label{
+	color: white;
+}
+.collection-item.selected{
+	transition: box-shadow .25s;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.collection-panel{
+	margin: 0.5rem 0 1rem 0;
+	border-radius: 2px;
+	overflow: hidden;
+	position: relative;
+	background-color: white;
+	padding: 10px 20px;
+}
+
+.collection-panel-item{
+	float: left;
+	padding: 20px;
+	width: 15%;
+	background-color: white;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	display: inline-block;
+}
+
+.scores .chip{
+	display: block;
+	border: 4px solid transparent;
+	background-color: #fff;
+	font-size: 20px;
+	height: 44px;
+	line-height: 38px;
+	padding: 0 24px;
+	border-radius: 22px;
+	transition: all 0.2s ease;
+	cursor: pointer;
+}
+.scores .chip.low{
+	color: #4CAF50 !important;
+}
+.scores .chip.med{
+	color: #ffc107 !important;			
+}
+.scores .chip.high{
+	color: #F44336 !important;
+}
+
+.scores .chip.low:hover{
+	border: 4px solid #4CAF50;
+}
+.scores .chip.low.selected{
+	background-color: #4CAF50 !important;
+	color: white !important;
+}
+.scores .chip.med:hover{
+	border: 4px solid #ffc107;
+}
+.scores .chip.med.selected{
+	background-color: #ffc107 !important;
+	color: white !important;
+}
+.scores .chip.high:hover{
+	border: 4px solid #F44336;
+}
+.scores .chip.high.selected{
+	background-color: #F44336 !important;
+	color: white !important;
+}
+.card-sticky{
+	display: inline-block;
+	vertical-align: middle;
+	width: 275px;
+	margin-right: 20px;
+	height: 200px;
+	background: #efec96;
+	background: radial-gradient(#f4f1b2, #eae672);
+	text-align: left;
+	padding: 0rem 2rem;
+}
+.card-sticky p {
+	color: black;
+	font-size: 20px;
+
+}
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #cccccc; 
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #cccccc; 
+}
+p{
+		color: black;
+		padding-left: 15px;
+}</style></head><body style="background:url(&quot;/img/dash-bg.png&quot;); background-size: cover"><div style="position:absolute;top:320px;left:340px;right:40px; bottom: 40px;" class="row"><div style="overflow-y:auto;overflow-x:hidden;max-height: 600px;padding:0px 40px" class="col s3"><ul class="collection"><li class="collection-item avatar hoverable"><div class="circle bg grey"></div><i class="material-icons circle grey">file_upload</i><div style="position:relative;z-index:50;"><span class="title">Discharged</span><br/><label>10/30/2016</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg grey"></div><i class="material-icons circle grey">content_paste</i><div style="position:relative;z-index:50;"><span class="title">Note Added</span><br/><label>10/29/2016</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg grey"></div><i class="material-icons circle grey">forum</i><div style="position:relative;z-index:50;"><span class="title">Healthy Conversation</span><br/><label>10/29/2016</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg red"></div><i class="material-icons circle red">favorite</i><div style="position:relative;z-index:50;"><span class="title">Cardiac Survey</span><br/><label>10/27/2016</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg amber"></div><i class="material-icons circle amber">spa</i><div style="position:relative;z-index:50;"><span class="title">General Wellness Survey</span><br/><label>10/27/2016</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg grey"></div><i class="material-icons circle grey">file_download</i><div style="position:relative;z-index:50;"><span class="title">Admitted</span><br/><label>9/4/2016</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg grey"></div><i class="material-icons circle grey">file_upload</i><div style="position:relative;z-index:50;"><span class="title">Discharged</span><br/><label>10/30/2015</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg green"></div><i class="material-icons circle green">spa</i><div style="position:relative;z-index:50;"><span class="title">General Wellness Survey</span><br/><label>10/29/2015</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg amber"></div><i class="material-icons circle amber">spa</i><div style="position:relative;z-index:50;"><span class="title">General Wellness Survey</span><br/><label>10/27/2016</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg grey"></div><i class="material-icons circle grey">file_download</i><div style="position:relative;z-index:50;"><span class="title">Admitted</span><br/><label>9/4/2016</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg grey"></div><i class="material-icons circle grey">file_upload</i><div style="position:relative;z-index:50;"><span class="title">Discharged</span><br/><label>10/30/2015</label></div></li><li class="collection-item avatar hoverable"><div class="circle bg green"></div><i class="material-icons circle green">spa</i><div style="position:relative;z-index:50;"><span class="title">General Wellness Survey</span><br/><label>10/29/2015</label></div></li></ul></div><div style="padding-left: 40px;overflow-y:auto;overflow-x:hidden;max-height: 600px;" class="col s9"><div style="margin-bottom:0px;" class="row"><div class="col s12"><div class="collection-panel"><div style="margin-bottom:0px;" class="row valign-wrapper"><div class="col s1"><i style="color:#ececec" class="material-icons medium">favorite</i></div><div class="col s7"><h4>Cardiac Survey</h4><h5>10/27/2016</h5></div><div style="justify-content: flex-end;" class="col s4 center valign-wrapper"><div style="font-size:28px;line-height:64px;width:175px;height:64px;border-radius:32px;" class="chip large amber white-text"><b>Med</b></div><a style="margin-left:10px" class="btn-floating btn-large"><i class="material-icons">print</i></a></div></div></div></div><div style="margin-bottom:0px;" class="row"><div class="col s4"><div style="margin-bottom:0px;" class="row white scores center"><div style="border-left:none" class="col s6"><h6>State of Mind</h6><div class="chip low selected">Low</div></div><div class="col s6"><h6>Support System</h6><div class="chip high">High</div></div><div style="border-left:none" class="col s6"><h6>State of Mind</h6><div class="chip med">Med</div></div><div class="col s6"><h6>Support System</h6><div class="chip high">High</div></div><div style="border-left:none" class="col s6"><h6>State of Mind</h6><div class="chip low">Low</div></div><div class="col s6"><h6>Support System</h6><div class="chip med">Med</div></div></div></div><div class="col s8"><div style="padding: 40px" class="row white"><div class="col s12 white"><p>- Patient must stop smoking.</p></div><div class="col s12 white"><p>- Patient indicates feeling that people around them are negatively affecting their health.</p></div><div class="col s12 white"><p>- Patient indicates lacking reliable transportation.</p></div><div class="col s12 white"><p>- Patient must stop smoking.</p></div><div class="col s12 white"><p>- Patient indicates feeling that people around them are negatively affecting their health.</p></div><div class="col s12 white"><p>- Patient indicates lacking reliable transportation.</p></div><div class="col s12 white"><p>- Patient indicates lacking reliable transportation.</p></div></div></div></div></div></div></div><script src="https://code.jquery.com/jquery-2.2.4.min.js"></script><!--script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js")--><script src="./js/velocity.min.js"></script><script src="./js/chartist.min.js"></script><script>$('.scores .chip').on('click', function(){
+		$('.scores .chip.selected').not(this).removeClass('selected');
+		$(this).toggleClass('selected');
+		$('.suggestions').toggle(400);
+})
+$('.collection-item').on('click', function(){
+	$('.collection-item.selected').not(this).removeClass('selected');
+	$(this).toggleClass('selected');
+})</script></body></html>

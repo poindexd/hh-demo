@@ -23,21 +23,23 @@
     padding: 0;
     text-align: center;
     position: relative; }
-    .radioset ul::before {
-      content: '';
-      position: absolute;
-      top: 60%;
-      left: 18%;
-      right: 18%;
-      height: 36px;
-      margin-top: -30px;
-      background: #aaa;
-      box-shadow: inset 0 3px 5px -4px #000, 0 1px #fff; }
   .radioset li {
     display: inline-block;
     vertical-align: top;
     position: relative;
     width: 17%; }
+    .radioset li::before {
+      content: '';
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      width: 100%;
+      height: 36px;
+      margin-top: -18px;
+      background: #aaa;
+      box-shadow: inset 0 3px 5px -4px #000, 0 1px #fff; }
+    .radioset li:last-child::before {
+      display: none; }
   .radioset [type="radio"] {
     position: absolute;
     top: 0;
@@ -162,6 +164,9 @@ sup {
 p {
   color: #aaa; }
 
+#menu {
+  box-shadow: none; }
+
 .dot {
   width: 20px;
   height: 20px;
@@ -237,7 +242,10 @@ p {
   border-radius: 50%;
   background-color: #fefefe;
   margin: 40 auto;
-  box-shadow: 0 9px 12px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.16); }
+  box-shadow: 0 9px 12px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.16);
+  transition: all .2s ease-in-out; }
+  .butterfly:hover {
+    transform: scale(1.2); }
   .butterfly::before {
     content: '';
     position: absolute;
@@ -247,51 +255,100 @@ p {
     left: 0;
     border-radius: 50%; }
 
-.wings {
-  position: absolute;
-  width: 70%;
-  height: 70%;
-  top: 27%;
-  transform-origin: top left;
-  animation: flap 10s infinite; }
-  .wings.left {
-    right: 43%;
-    transform-origin: right center; }
-  .wings.right {
-    left: 57%;
-    transform-origin: left center; }
+.card-header {
+  margin: -20px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  color: #fff; }
+  .card-header h5 {
+    font-weight: 400; }
 
-.shadow {
-  position: absolute;
-  width: 70%;
-  height: 70%;
-  top: 29%;
-  transform-origin: top left;
-  opacity: 0.3;
-  animation: flap-shadow 10s infinite; }
-  .shadow.left {
-    right: 43%;
-    transform-origin: right center; }
-  .shadow.right {
-    left: 57%;
-    transform-origin: left center; }
+path:hover {
+  transform: scale(1.2, 1.2);
+  transform-origin: center center; }
 
-@keyframes flap {
-  0%, 10%, 40%, 65%, 100% {
+header {
+  margin-bottom: -10px; }
+
+.timeline-row {
+  cursor: pointer;
+  padding: 10px 0px; }
+  .timeline-row.selected {
+    background: #00bcd4;
+    color: #fff; }
+    .timeline-row.selected label {
+      color: #fff; }
+  .timeline-row label {
+    cursor: pointer; }
+  .timeline-row:hover:not(.selected) {
+    background: #f5f5f5; }
+    .timeline-row:hover:not(.selected) .timeline-icon {
+      transform: scale(1.2);
+      padding: 12px 0 0 12px; }
+
+.timeline-icon {
+  width: 44px;
+  height: 44px;
+  padding: 10px 0 0 10px;
+  transition: all .2s ease-in-out;
+  margin: 0 auto; }
+
+.blue-green-gradient {
+  background: -webkit-linear-gradient(300deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%);
+  background: linear-gradient(150deg, #53f 15%, #05d5ff 70%, #a6ffcb 94%); }
+
+#butterfly {
+  margin: 0 auto;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 15px; }
+  #butterfly #wing-orange {
+    transform-origin: 0% 100%;
+    animation: flap-back 40s infinite; }
+  #butterfly #wing-magenta {
+    transform-origin: 0% 80%;
+    animation: flap-front 40s infinite; }
+  #butterfly #wing-green {
+    transform-origin: 100% 100%;
+    animation: flap-back 40s infinite; }
+  #butterfly #wing-yellow {
+    transform-origin: 100% 96%;
+    animation: flap-front 40s infinite; }
+
+@keyframes flap-back {
+  0%,
+  23%,
+  27%,
+  88%,
+  96%,
+  100% {
     transform: scale(1, 1); }
   25% {
-    transform: scale(0.75, 1); }
-  75%, 85% {
-    transform: scale(0.85, 1); }
-  80% {
-    transform: scale(0.95, 1); } }
+    transform: scale(1, 0.45) rotate(8deg); }
+  90%,
+  94% {
+    transform: scale(1, 0.85) rotate(7deg); }
+  92% {
+    transform: scale(1, 0.95) rotate(8deg); } }
 
-@keyframes flap-shadow {
-  0%, 10%, 40%, 65%, 100% {
+@keyframes flap-front {
+  0%,
+  23%,
+  27%,
+  88%,
+  96%,
+  100% {
     transform: scale(1, 1); }
   25% {
-    transform: scale(0.85, 1); }
-  75%, 85% {
-    transform: scale(0.92, 1); }
-  80% {
-    transform: scale(0.97, 1); } }
+    transform: scale(1, 0.25) rotate(-7deg); }
+  90%,
+  94% {
+    transform: scale(1, 0.65) rotate(-6deg); }
+  92% {
+    transform: scale(1, 0.75) rotate(-7deg); } }
+
+.collection .collection-item.avatar {
+  min-height: 0px; }

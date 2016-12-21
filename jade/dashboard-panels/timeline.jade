@@ -1,0 +1,20 @@
+mixin dot(title, date, icon)
+	li.collection-item.avatar
+		i.material-icons.circle&attributes(attributes)= icon
+		span.title= title
+		br
+		label= date
+
+.card-panel
+	.card-header.blue.accent-2
+		h5 Timeline
+	ul.collection
+		+dot('Discharged','10/30/2016', 'file_upload')(class='grey')
+		+dot('Note Added', '10/29/2016', 'content_paste')(class='grey')
+		+dot('Healthy Conversation', '10/29/2016', 'forum')(class='grey')
+		+dot('Cardiac Survey','10/27/2016', 'favorite')(class='red')
+		+dot('General Wellness Survey', '10/27/2016', 'spa')(class='amber')
+		+dot('Admitted','9/4/2016', 'file_download')(class='grey')
+
+		+dot('Discharged','10/30/2015', 'file_upload')(class='grey')
+		+dot('General Wellness Survey', '10/29/2015', 'spa')(class='green')

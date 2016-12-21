@@ -1,0 +1,123 @@
+mixin dot(title, date, icon)
+	li.collection-item.avatar.hoverable
+		.circle.bg&attributes(attributes)
+		i.material-icons.circle&attributes(attributes)= icon
+		div(style='position:relative;z-index:50;')
+			span.title= title
+			br
+			label= date
+
+mixin score(title, risk, category)
+	.score.col.s2(data-category= category)
+		.score-inner.hoverable
+			h6= title
+			if (risk == 'Low')
+				.text.chip.low Low
+				.bg.chip.low
+			if (risk == 'Med')
+				.text.chip.med Med
+				.bg.chip.med
+			if (risk == 'High')
+				.text.chip.high High
+				.bg.chip.high
+
+html
+	head
+		title Wellopp Dashboard
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='stylesheet', href='./css/chartist.min.css')
+		include include/head.jade
+		link(rel='stylesheet', href='./css/dashboard.css')
+			
+	body(style='background:url("/img/dash-bg.png"); background-size: cover')
+		.row(style='position:absolute;top:320px;left:340px;right:40px; bottom: 40px;')
+			.col.s3(style='overflow-y:auto;overflow-x:hidden;max-height: 600px;padding:0px 40px')
+				ul.collection
+					+dot('Discharged','10/30/2016', 'file_upload')(class='grey')
+					+dot('Note Added', '10/29/2016', 'content_paste')(class='grey')
+					+dot('Healthy Conversation', '10/29/2016', 'forum')(class='grey')
+					+dot('Cardiac Survey','10/27/2016', 'favorite')(class='red')
+					+dot('General Wellness Survey', '10/27/2016', 'spa')(class='amber')
+					+dot('Admitted','9/4/2016', 'file_download')(class='grey')
+					+dot('Discharged','10/30/2015', 'file_upload')(class='grey')
+					+dot('General Wellness Survey', '10/29/2015', 'spa')(class='green')
+					+dot('General Wellness Survey', '10/27/2016', 'spa')(class='amber')
+					+dot('Admitted','9/4/2016', 'file_download')(class='grey')
+					+dot('Discharged','10/30/2015', 'file_upload')(class='grey')
+					+dot('General Wellness Survey', '10/29/2015', 'spa')(class='green')
+
+			.col.s9(style='padding-left: 40px;')
+				.row(style='margin-bottom:0px;')
+					.col.s12
+						.collection-panel
+							.row.valign-wrapper(style='margin-bottom:0px;')
+								.col.s1
+									i.material-icons.medium(style='color:#ececec') favorite
+								.col.s7
+									h4 Cardiac Survey
+									h5 10/27/2016
+								.col.s4.center.valign-wrapper(style='justify-content: flex-end;')
+									.chip.large.red.white-text(style='font-size:28px;line-height:64px;width:175px;height:64px;border-radius:32px;'): b High
+									a.btn-floating.btn-large(style='margin-left:10px'): i.material-icons print
+					.row(style='margin-bottom:0px;')
+						.col.s12
+							.row.scores.center(style='margin-bottom:0px;')
+								+score('State of Mind', 'Low', '#a')
+								+score('Lifestyle', 'Med', '#b')
+								+score('Diet & Activity', 'High', '#c')
+								+score('Medication', 'Med', '#d')
+								+score('Warning Signs', 'High', '#e')
+								+score('State of Mind', 'Low', '#f')
+
+						#suggestions.col.s12
+							.row.white(style='padding: 40px')
+								#a.suggestion-category.low
+									h5 State of mind
+									.col.s12.white: p - Patient must stop smoking.
+									.col.s12.white: p - Patient indicates feeling that people around them are negatively affecting their health.
+								#b.suggestion-category.med
+									h5 Lifestyle
+									.col.s12.white: p - Patient indicates lacking reliable transportation.
+									.col.s12.white: p - Patient must stop smoking.
+								#c.suggestion-category.high
+									h5 Diet & Activity
+									.col.s12.white: p - Patient indicates feeling that people around them are negatively affecting their health.
+									.col.s12.white: p - Patient indicates lacking reliable transportation.
+									.col.s12.white: p - Patient indicates lacking reliable transportation.
+								#d.suggestion-category.med
+									h5 Medication
+									.col.s12.white: p - Patient indicates feeling that people around them are negatively affecting their health.
+									.col.s12.white: p - Patient indicates lacking reliable transportation.
+									.col.s12.white: p - Patient indicates lacking reliable transportation.
+								#e.suggestion-category.high
+									h5 Warning Signs
+									.col.s12.white: p - Patient indicates feeling that people around them are negatively affecting their health.
+									.col.s12.white: p - Patient indicates lacking reliable transportation.
+									.col.s12.white: p - Patient indicates lacking reliable transportation.
+								#f.suggestion-category.low
+									h5 State of Mind
+									.col.s12.white: p - Patient indicates feeling that people around them are negatively affecting their health.
+									.col.s12.white: p - Patient indicates lacking reliable transportation.
+									.col.s12.white: p - Patient indicates lacking reliable transportation.
+
+
+
+		script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+		//script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js")
+		script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.14/jquery.scrollTo.min.js')
+		script(src='./js/velocity.min.js')
+		script(src='./js/chartist.min.js')
+		script.
+			$('.score').on('click', function(){
+					$('.score').not(this).removeClass('selected');
+					$(this).toggleClass('selected');
+					$('.suggestions').toggle(400);
+					var category = $(this).attr('data-category');
+					$('#suggestions').scrollTo(category, 400, {offset:-10});
+					$('.suggestion-category').not(category).removeClass('selected');
+					$(category).toggleClass('selected');
+			})
+			$('.collection-item').on('click', function(){
+				$('.collection-item.selected').not(this).removeClass('selected');
+				$(this).toggleClass('selected');
+			})
